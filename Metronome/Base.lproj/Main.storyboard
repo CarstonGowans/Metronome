@@ -1,24 +1,404 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5hu-rO-ZY4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="7ne-Mq-AYf">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tabBarController id="5hu-rO-ZY4" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bH2-zs-3YA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="b4l-SA-zfF" kind="relationship" relationship="viewControllers" id="4XX-Mf-PhB"/>
+                        <segue destination="fXi-ec-G9h" kind="relationship" relationship="viewControllers" id="lrP-RY-U9J"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Cq-61-WDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-2449" y="-291"/>
+        </scene>
+        <!--Metronome-->
+        <scene sceneID="aW0-SG-l0d">
+            <objects>
+                <navigationController id="b4l-SA-zfF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Metronome" image="deskclock.fill" catalog="system" id="mBm-yL-dyE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mFP-a6-aqB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RHH-1t-FEP" kind="relationship" relationship="rootViewController" id="pzY-EM-8G2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cln-Ye-k7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426" y="-291"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cDQ-yL-NLT">
+            <objects>
+                <viewController id="RHH-1t-FEP" customClass="ViewController" customModule="Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KxJ-kk-mnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MTm-Gl-zLm" userLabel="Functionality Stack">
+                                <rect key="frame" x="35" y="208" width="344" height="186"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oCw-Co-OfN" userLabel="Tempo Stack">
+                                        <rect key="frame" x="109" y="0.0" width="126.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcl-Mt-jVK" userLabel="TempoText">
+                                                <rect key="frame" x="0.0" y="2" width="65" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlG-jp-mpg">
+                                                <rect key="frame" x="95" y="0.0" width="31.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minimumValue="1" maximumValue="6060" translatesAutoresizingMaskIntoConstraints="NO" id="4Dg-X0-8sG">
+                                        <rect key="frame" x="125" y="45" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="tempoStepperValueChange:" destination="RHH-1t-FEP" eventType="valueChanged" id="cPh-d9-HaX"/>
+                                        </connections>
+                                    </stepper>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MtC-4P-3oQ" userLabel="Downbeat / Tone stack">
+                                        <rect key="frame" x="0.0" y="92" width="344" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distinctive Downbeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKh-bu-mQY">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sml-7Y-loa">
+                                                <rect key="frame" x="295" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sBF-SJ-0i8" userLabel="Play / Reset Stack">
+                                        <rect key="frame" x="97.5" y="138" width="149" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaZ-8P-moW">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Play">
+                                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="RHH-1t-FEP" eventType="touchUpInside" id="ctM-rh-PMX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXQ-zM-vcO">
+                                                <rect key="frame" x="75" y="0.0" width="74" height="48"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="resetButton" label="Reset Met"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="resetButtonAction:" destination="RHH-1t-FEP" eventType="touchUpInside" id="RXq-z7-Vgh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="Mv6-pg-Hmg"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="9PP-yy-OI4" userLabel="Time Signature Stack">
+                                <rect key="frame" x="49" y="108" width="316" height="92"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Signature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX3-cb-3xu" userLabel="Time Signature">
+                                        <rect key="frame" x="0.0" y="34.5" width="127.5" height="23"/>
+                                        <accessibility key="accessibilityConfiguration" label="TimeSignature"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ae7-Vr-A37" userLabel="Number / Type of Beats stack">
+                                        <rect key="frame" x="167.5" y="0.0" width="148.5" height="92"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4g4-Ho-26m" userLabel="Number of Beats ">
+                                                <rect key="frame" x="8" y="0.0" width="133" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmK-1I-zVv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="19" height="36"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="numberOfBeats" label="4"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" value="4" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="bFa-Se-Osa">
+                                                        <rect key="frame" x="39" y="2" width="94" height="32"/>
+                                                        <connections>
+                                                            <action selector="numberStepperValueChange:" destination="RHH-1t-FEP" eventType="valueChanged" id="Tkx-3L-Jb0"/>
+                                                        </connections>
+                                                    </stepper>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pZp-QV-sNe" userLabel="Type of Beats">
+                                                <rect key="frame" x="8" y="56" width="133" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIA-2F-R2v">
+                                                        <rect key="frame" x="0.0" y="0.0" width="19" height="36"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="typeOfBeat"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="2" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-nc-HAN">
+                                                        <rect key="frame" x="39" y="2" width="94" height="32"/>
+                                                        <connections>
+                                                            <action selector="beatTypeStepperValueChange:" destination="RHH-1t-FEP" eventType="valueChanged" id="sMd-ju-1Eq"/>
+                                                        </connections>
+                                                    </stepper>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vl6-ux-egc"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9PP-yy-OI4" firstAttribute="centerX" secondItem="MTm-Gl-zLm" secondAttribute="centerX" id="Qyu-Jw-l64"/>
+                            <constraint firstItem="MTm-Gl-zLm" firstAttribute="top" secondItem="9PP-yy-OI4" secondAttribute="bottom" constant="8" id="T3W-09-0zk"/>
+                            <constraint firstItem="9PP-yy-OI4" firstAttribute="centerX" secondItem="KxJ-kk-mnJ" secondAttribute="centerX" id="aux-kr-HF1"/>
+                            <constraint firstItem="9PP-yy-OI4" firstAttribute="top" secondItem="Vl6-ux-egc" secondAttribute="top" constant="20" id="isV-YS-hQd"/>
+                            <constraint firstItem="9PP-yy-OI4" firstAttribute="leading" secondItem="Vl6-ux-egc" secondAttribute="leading" constant="49" id="mgV-g3-9gk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1dZ-wc-uME"/>
+                    <connections>
+                        <outlet property="downbeatSwitch" destination="sml-7Y-loa" id="ZL3-tJ-gIW"/>
+                        <outlet property="metronomeButton" destination="gaZ-8P-moW" id="4Ge-Zd-5Od"/>
+                        <outlet property="numberOfBeats" destination="hmK-1I-zVv" id="Znl-we-o1J"/>
+                        <outlet property="numberOfBeatsStepper" destination="bFa-Se-Osa" id="Q1C-Jh-Ii3"/>
+                        <outlet property="resetButton" destination="NXQ-zM-vcO" id="mZU-y6-XOz"/>
+                        <outlet property="tempo" destination="HlG-jp-mpg" id="nbF-gE-uiS"/>
+                        <outlet property="tempoStepper" destination="4Dg-X0-8sG" id="K6n-9y-irE"/>
+                        <outlet property="typeOfBeat" destination="zIA-2F-R2v" id="D43-WY-a96"/>
+                        <outlet property="typeOfBeatStepper" destination="xDb-nc-HAN" id="oNq-4x-wXY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMH-P4-ugt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="-291"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="G0l-sL-5Ol">
+            <objects>
+                <viewController id="qHU-bO-CfW" customClass="TableViewController" customModule="Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WIi-I5-rCD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TSP-Lb-J8Z" userLabel="tableView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="2vv-Sa-YH3" detailTextLabel="lYo-w4-1Xr" style="IBUITableViewCellStyleSubtitle" id="uW0-Em-G6V">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uW0-Em-G6V" id="eTY-KE-1Y8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2vv-Sa-YH3">
+                                                    <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lYo-w4-1Xr">
+                                                    <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="cell" label="cell"/>
+                                        <connections>
+                                            <segue destination="1va-O6-7ci" kind="show" identifier="editSegue" trigger="accessoryAction" id="Uwn-Jq-xOB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fdf-5g-yYf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TSP-Lb-J8Z" firstAttribute="top" secondItem="WIi-I5-rCD" secondAttribute="topMargin" constant="-44" id="2Ly-fn-Fz8"/>
+                            <constraint firstItem="TSP-Lb-J8Z" firstAttribute="leading" secondItem="Fdf-5g-yYf" secondAttribute="leading" id="b2n-AG-Tt4"/>
+                            <constraint firstItem="TSP-Lb-J8Z" firstAttribute="centerX" secondItem="WIi-I5-rCD" secondAttribute="centerX" id="fLL-JW-KCj"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="TSP-Lb-J8Z" secondAttribute="bottom" constant="-49" id="sYn-L1-ncb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KY0-dh-mWs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="epU-eU-R7N">
+                            <connections>
+                                <segue destination="lAW-Y6-1XP" kind="show" identifier="addSegue" id="Uix-sq-fdK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="TSP-Lb-J8Z" id="CGz-M5-paa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="104-gl-Sxx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1264" y="708"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="P5t-Wm-Ylh">
+            <objects>
+                <viewController storyboardIdentifier="AddViewController" title="Add View Controller" id="lAW-Y6-1XP" customClass="AddViewController" customModule="Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e14-Wc-k8I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="irP-am-uTB" userLabel="Add Tempo Stack">
+                                <rect key="frame" x="16" y="104" width="382" height="154"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ke7-Ya-FvR" userLabel="Add Bpm">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="addBpm" label="Add Bpm"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2hf-Qm-e4C" userLabel="Add Time Signature">
+                                        <rect key="frame" x="0.0" y="34" width="382" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="addTimeSignature" label="Add Time Signature">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="z2B-5a-TD8"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UJx-59-ZIL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="irP-am-uTB" firstAttribute="leading" secondItem="UJx-59-ZIL" secondAttribute="leading" constant="16" id="0cT-KN-XLT"/>
+                            <constraint firstItem="irP-am-uTB" firstAttribute="top" secondItem="UJx-59-ZIL" secondAttribute="top" constant="16" id="epW-XQ-AuL"/>
+                            <constraint firstItem="UJx-59-ZIL" firstAttribute="trailing" secondItem="irP-am-uTB" secondAttribute="trailing" constant="16" id="uoY-JH-GSB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zsJ-CV-01m"/>
+                    <connections>
+                        <outlet property="addBpm" destination="Ke7-Ya-FvR" id="LoU-jm-JHm"/>
+                        <outlet property="addTimeSignature" destination="2hf-Qm-e4C" id="FZV-Qa-Yy0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feo-41-but" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426" y="419"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="yEZ-zK-axQ">
+            <objects>
+                <viewController storyboardIdentifier="EditViewController" title="Edit View Controller" id="1va-O6-7ci" userLabel="Edit View Controller" customClass="EditViewController" customModule="Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ehy-yY-fhg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0xw-fT-z9Z" userLabel="Edit Tempo Stack">
+                                <rect key="frame" x="16" y="104" width="382" height="154"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DZn-cg-1R0" userLabel="Edit Bpm">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="editBpm"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iTs-u1-Rk1">
+                                        <rect key="frame" x="0.0" y="34" width="382" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="editTimeSignature" label="Edit TIme SIgnature"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="zWH-GN-vgt"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0jk-dO-NCa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0xw-fT-z9Z" firstAttribute="top" secondItem="0jk-dO-NCa" secondAttribute="top" constant="16" id="irr-ck-TaU"/>
+                            <constraint firstItem="0jk-dO-NCa" firstAttribute="trailing" secondItem="0xw-fT-z9Z" secondAttribute="trailing" constant="16" id="kj3-qi-0fS"/>
+                            <constraint firstItem="0xw-fT-z9Z" firstAttribute="leading" secondItem="0jk-dO-NCa" secondAttribute="leading" constant="16" id="xpE-sa-lua"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZAg-yc-4N5"/>
+                    <connections>
+                        <outlet property="editBpm" destination="DZn-cg-1R0" id="nwy-9g-yYZ"/>
+                        <outlet property="editTimeSignature" destination="iTs-u1-Rk1" id="v7y-ye-uK5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7B-eV-IWo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-464" y="1067"/>
+        </scene>
+        <!--Saved Tempos-->
+        <scene sceneID="96K-Zq-WEO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fXi-ec-G9h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved Tempos" image="arrow.clockwise.icloud.fill" catalog="system" id="KrF-is-uti"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5qX-Zf-npt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qHU-bO-CfW" kind="relationship" relationship="rootViewController" id="49f-fr-PlB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cP2-UT-JgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2449" y="712"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.clockwise.icloud.fill" catalog="system" width="128" height="88"/>
+        <image name="deskclock.fill" catalog="system" width="128" height="124"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

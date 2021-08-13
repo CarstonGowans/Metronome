@@ -15,6 +15,11 @@
 		D9EEDFC826C1F4C100EB38BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9EEDFC626C1F4C100EB38BE /* LaunchScreen.storyboard */; };
 		D9EEDFD326C1F4C200EB38BE /* MetronomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEDFD226C1F4C200EB38BE /* MetronomeTests.swift */; };
 		D9EEDFDE26C1F4C200EB38BE /* MetronomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEDFDD26C1F4C200EB38BE /* MetronomeUITests.swift */; };
+		D9EEDFEC26C200BE00EB38BE /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEDFEB26C200BE00EB38BE /* EditViewController.swift */; };
+		D9EEDFEE26C200E100EB38BE /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEDFED26C200E100EB38BE /* AddViewController.swift */; };
+		D9EEDFF026C38F9500EB38BE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEDFEF26C38F9500EB38BE /* TableViewController.swift */; };
+		D9EEDFF226C4CE9C00EB38BE /* lowPitch.wav in Resources */ = {isa = PBXBuildFile; fileRef = D9EEDFF126C4CE9B00EB38BE /* lowPitch.wav */; };
+		D9EEDFF426C4CEA700EB38BE /* highPitch.wav in Resources */ = {isa = PBXBuildFile; fileRef = D9EEDFF326C4CEA700EB38BE /* highPitch.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		D9EEDFD926C1F4C200EB38BE /* MetronomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetronomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EEDFDD26C1F4C200EB38BE /* MetronomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeUITests.swift; sourceTree = "<group>"; };
 		D9EEDFDF26C1F4C200EB38BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9EEDFEB26C200BE00EB38BE /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		D9EEDFED26C200E100EB38BE /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		D9EEDFEF26C38F9500EB38BE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D9EEDFF126C4CE9B00EB38BE /* lowPitch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lowPitch.wav; sourceTree = "<group>"; };
+		D9EEDFF326C4CEA700EB38BE /* highPitch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = highPitch.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +112,15 @@
 				D9EEDFBB26C1F4BC00EB38BE /* AppDelegate.swift */,
 				D9EEDFBD26C1F4BC00EB38BE /* SceneDelegate.swift */,
 				D9EEDFBF26C1F4BC00EB38BE /* ViewController.swift */,
+				D9EEDFEB26C200BE00EB38BE /* EditViewController.swift */,
+				D9EEDFEF26C38F9500EB38BE /* TableViewController.swift */,
+				D9EEDFED26C200E100EB38BE /* AddViewController.swift */,
 				D9EEDFC126C1F4BC00EB38BE /* Main.storyboard */,
 				D9EEDFC426C1F4C100EB38BE /* Assets.xcassets */,
 				D9EEDFC626C1F4C100EB38BE /* LaunchScreen.storyboard */,
 				D9EEDFC926C1F4C100EB38BE /* Info.plist */,
+				D9EEDFF126C4CE9B00EB38BE /* lowPitch.wav */,
+				D9EEDFF326C4CEA700EB38BE /* highPitch.wav */,
 			);
 			path = Metronome;
 			sourceTree = "<group>";
@@ -232,7 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9EEDFC826C1F4C100EB38BE /* LaunchScreen.storyboard in Resources */,
+				D9EEDFF426C4CEA700EB38BE /* highPitch.wav in Resources */,
 				D9EEDFC526C1F4C100EB38BE /* Assets.xcassets in Resources */,
+				D9EEDFF226C4CE9C00EB38BE /* lowPitch.wav in Resources */,
 				D9EEDFC326C1F4BC00EB38BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9EEDFEE26C200E100EB38BE /* AddViewController.swift in Sources */,
+				D9EEDFF026C38F9500EB38BE /* TableViewController.swift in Sources */,
+				D9EEDFEC26C200BE00EB38BE /* EditViewController.swift in Sources */,
 				D9EEDFC026C1F4BC00EB38BE /* ViewController.swift in Sources */,
 				D9EEDFBC26C1F4BC00EB38BE /* AppDelegate.swift in Sources */,
 				D9EEDFBE26C1F4BC00EB38BE /* SceneDelegate.swift in Sources */,
@@ -437,6 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92DCSKS94A;
 				INFOPLIST_FILE = Metronome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 92DCSKS94A;
 				INFOPLIST_FILE = Metronome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
